@@ -1,0 +1,577 @@
+/* Reset i Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors Corporatius Xammar Digital */
+    --color-accent: #FF6B00;
+    --color-accent-hover: #FF8A33;
+    --color-heading: #1A365D; /* Blau fosc sòlid */
+    --color-text: #2D3748;    /* Gris fosc/blau text */
+    --color-bg-special: #EDF2F7;
+    --color-bg-main: #FFFFFF;
+    --color-border: #CBD5E0;
+    
+    /* Fons espectacular general */
+    --color-bg-dark: #0f192b; 
+    
+    /* Tipografies */
+    --font-heading: 'Funnel Display', sans-serif;
+    --font-body: 'Funnel Sans', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Titulars i elements comuns */
+h1, h2, h3, h4, h5, h6, .badge, .phase-tag, .level-info strong {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+.section-title.light {
+    color: var(--color-bg-main);
+}
+
+/* Utilitats Box Shadow Premium */
+.box-shadow {
+    box-shadow: 0 10px 40px rgba(26, 54, 93, 0.08);
+}
+.box-shadow-hover:hover {
+    box-shadow: 0 20px 50px rgba(255, 107, 0, 0.15);
+}
+
+/* Botons Accionables */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+.btn.primary {
+    background-color: var(--color-accent);
+    color: #FFF;
+    border: 2px solid transparent;
+}
+
+.btn.primary:hover {
+    background-color: var(--color-bg-main);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-dark);
+    color: #FFF;
+    overflow: hidden;
+    padding: 6rem 5%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero h1, .hero h2 {
+    color: #FFF;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.15);
+    color: var(--color-accent);
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    letter-spacing: -1.5px;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    color: var(--color-bg-special);
+    max-width: 700px;
+    margin: 0 auto 5rem auto;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Indicador de Scroll */
+.scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-bg-main);
+}
+
+.mouse {
+    width: 32px;
+    height: 52px;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollMouse 2s infinite ease-in-out;
+}
+
+@keyframes scrollMouse {
+    0% { opacity: 1; top: 8px; transform: scaleY(1) translateX(-50%); }
+    50% { opacity: 0.5; top: 22px; transform: scaleY(0.5) translateX(-50%);}
+    100% { opacity: 0; top: 8px; transform: scaleY(1) translateX(-50%); }
+}
+
+/* Fons interactiu nodos */
+.nodes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Que no tapi clicks */
+}
+
+.node {
+    position: absolute;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+}
+
+/* --- TIMELINE SECTION --- */
+.timeline-section {
+    padding: 10rem 0;
+    background: var(--color-bg-special);
+    position: relative;
+    z-index: 3; /* Per passar per damunt del hero gradient */
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--color-border);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-bg-main);
+    border: 5px solid var(--color-heading);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-item.current .timeline-marker {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+}
+
+.timeline-marker.pulse {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.5); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 107, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+}
+
+.timeline-content {
+    background: var(--color-bg-main);
+    padding: 3rem;
+    border-radius: 16px;
+    border-left: 6px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item.completed .timeline-content {
+    border-left-color: var(--color-heading);
+}
+
+.timeline-item.current .timeline-content.highlight {
+    border-left-color: var(--color-accent);
+    transform: scale(1.02);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.phase-tag {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.phase-tag.accent {
+    color: var(--color-accent);
+}
+
+.timeline-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+}
+
+.status {
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
+
+.completed-status {
+    background: rgba(26, 54, 93, 0.1);
+    color: var(--color-heading);
+}
+
+.current-status {
+    background: rgba(255, 107, 0, 0.15);
+    color: var(--color-accent);
+}
+
+.details p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+
+.details .limit {
+    color: var(--color-heading);
+    font-weight: 600;
+    background: var(--color-bg-special);
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--color-border);
+}
+
+/* --- SECCIÓ FUTUR --- */
+.future-section {
+    padding: 10rem 0;
+    background: var(--color-bg-main);
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.future-card {
+    background: var(--color-bg-special);
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(26, 54, 93, 0.05);
+    transition: all 0.4s ease;
+}
+
+.future-card:hover {
+    background: var(--color-bg-main);
+    border-color: var(--color-accent);
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.future-desc {
+    font-size: 1.15rem;
+    margin: 1.5rem 0 2.5rem 0;
+    color: var(--color-text);
+}
+
+.future-state {
+    font-size: 1rem;
+    background: var(--color-bg-main);
+    color: var(--color-heading);
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.future-card:hover .future-state {
+    border-color: rgba(255, 107, 0, 0.3);
+}
+
+/* --- TAULA RENDIMENT DEEPMIND --- */
+.performance-section {
+    padding: 10rem 0;
+    background: var(--color-heading);
+    color: #FFF;
+}
+
+.performance-subtitle {
+    color: var(--color-bg-special);
+    opacity: 0.8;
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.levels-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.level-bar-wrapper {
+    margin-bottom: 3rem;
+}
+
+.level-info {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.level-info strong {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+}
+
+.eq-tag {
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.eq-ex {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+.progress-track {
+    width: 100%;
+    height: 18px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--color-border); /* Gris clar */
+    border-radius: 10px;
+    width: 0%; /* Injectado per JS */
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.accent-fill { background: var(--color-accent); }
+.future-fill { background: #4299E1; } /* Blau reserva futura */
+.super-fill {
+    background: linear-gradient(45deg, var(--color-accent), #ffb443);
+}
+
+/* --- CTA SECTION --- */
+.cta-section {
+    padding: 8rem 0;
+    background: var(--color-bg-special);
+}
+
+.cta-box {
+    background: var(--color-bg-main);
+    padding: 6rem 4rem;
+    border-radius: 20px;
+    text-align: center;
+    border-top: 8px solid var(--color-accent);
+}
+
+.cta-box h3 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+.cta-text {
+    font-size: 1.6rem;
+    max-width: 900px;
+    margin: 0 auto 3.5rem auto;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.cta-text strong {
+    color: var(--color-heading);
+}
+
+.highlight-text {
+    color: var(--color-accent);
+    font-weight: 800;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 4rem 0;
+    text-align: center;
+    background: var(--color-heading);
+    color: var(--color-bg-special);
+    border-top: 5px solid var(--color-accent);
+}
+
+.footer-title {
+    color: #FFF;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 900px) {
+    .timeline-content {
+        padding: 2rem;
+    }
+    .timeline-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title { font-size: 2.2rem; }
+    .hero-title { font-size: 3rem; }
+    
+    .timeline::before { left: 20px; }
+    .timeline-marker { left: 8px; width: 28px; height: 28px; }
+    .timeline-item { padding-left: 55px; }
+    
+    .cta-box { padding: 3rem 1.5rem; }
+    .cta-text { font-size: 1.2rem; }
+}

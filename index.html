@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Evolutiu de la IA | Xammar Digital</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;600;800&family=Funnel+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- CSS Correu -->
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP per Animacions Espectaculars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">🚀 Estat de la Tecnologia 2026</span>
+            <h1 class="hero-title">🗺️ Mapa Evolutiu<br>de la IA</h1>
+            <p class="hero-subtitle">Descobreix com la Intel·ligència Artificial està canviant el món d'una forma pràctica i directa. Dels xatbots als agents autònoms. Sense fum, només acció!</p>
+            <div class="scroll-indicator">
+                <span>Descobreix les Fases</span>
+                <div class="mouse"><div class="wheel"></div></div>
+            </div>
+        </div>
+        <!-- Contenidor Fons animat interactiu amb GSAP -->
+        <div class="nodes-container" id="nodes-container"></div>
+    </header>
+
+    <main>
+        <!-- SECCIÓ TIMELINE PRINCIPAL -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2 class="section-title">Les Fases de l'Evolució</h2>
+                <div class="timeline">
+                    <!-- Fase 1 -->
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content box-shadow">
+                            <span class="phase-tag">FASE 1 • NIVELL 1</span>
+                            <h3>💬 Xatbots i Llenguatge</h3>
+                            <p class="status completed-status">✅ COMPLETAT (2022-2023)</p>
+                            <div class="details">
+                                <p><strong>Capacitat:</strong> Interacció fluida en llenguatge natural, resum de textos i generació de contingut creatiu.</p>
+                                <p><strong>Certificació:</strong> GPT-4 (OpenAI) i Gemini 1.0 (Google).</p>
+                                <p class="limit"><strong>Límit actual:</strong> Operen per predicció estadística ("propera paraula"); encara presenten "al·lucinacions" freqüents.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fase 2 -->
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content box-shadow">
+                            <span class="phase-tag">FASE 2 • NIVELL 2</span>
+                            <h3>🧩 Raonadors i Resolució de Problemes</h3>
+                            <p class="status completed-status">✅ COMPLETAT (2024-2025)</p>
+                            <div class="details">
+                                <p><strong>Capacitat:</strong> El sistema utilitza el "Pensament de Sistema 2" (deliberatiu). Pot resoldre matemàtiques de nivell de doctorat, programar codi complex i verificar els seus propis errors abans de respondre.</p>
+                                <p><strong>Certificació:</strong> Validat per les sèries o1 i o3 d'OpenAI i els models de raonament profund de DeepMind.</p>
+                                <p class="limit"><strong>Límit actual:</strong> Molt intel·ligents, però encara depenen que un humà els doni cada ordre individualment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fase 3 (ACTUAL) -->
+                    <div class="timeline-item current">
+                        <div class="timeline-marker pulse"></div>
+                        <div class="timeline-content box-shadow highlight">
+                            <span class="phase-tag accent">FASE 3 • NIVELL 3</span>
+                            <h3>🤖 Agents i Autonomia</h3>
+                            <p class="status current-status">⚡ EN CURS / ESTÀNDARD ACTUAL (2025-2026)</p>
+                            <div class="details">
+                                <p><strong>Capacitat:</strong> La IA ja no només "parla", sinó que <strong>actua</strong>. Pot navegar per la web, fer servir aplicacions com un humà i completar missions de diversos dies (ex: "Planifica i reserva tot un viatge").</p>
+                                <p><strong>Certificació:</strong> Implementat mitjançant la funció "Computer Use" d'Anthropic i els agents de Microsoft / OpenAI.</p>
+                                <p class="limit"><strong>Límit actual:</strong> Requereixen supervisió humana per a decisions ètiques o en entorns molt impredictibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓ FUTUR PROPER -->
+        <section class="future-section">
+            <div class="container">
+                <h2 class="section-title">El Futur Proper (En Recerca)</h2>
+                <div class="future-grid">
+                    <div class="future-card box-shadow-hover">
+                        <div class="card-icon">🧠</div>
+                        <span class="phase-tag">FASE 4 • NIVELL 4</span>
+                        <h3>Innovadors</h3>
+                        <p class="future-desc">IAs que descobreixen coneixement científic nou totalment autònom (noves medecines, materials avançats).</p>
+                        <p class="future-state">Estat: <strong>Prototips avançats</strong> (ex: AlphaFold 3)</p>
+                    </div>
+                    <div class="future-card box-shadow-hover">
+                        <div class="card-icon">🏢</div>
+                        <span class="phase-tag">FASE 5 • NIVELL 5</span>
+                        <h3>Organitzacions</h3>
+                        <p class="future-desc">Sistemes interconnectats que poden gestionar una empresa o departament sencer de forma autònoma i sense dependència directa.</p>
+                        <p class="future-state">Estat: <strong>Teòric / Experimental</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAULA RENDIMENT DEEPMIND (Visualització Gràfica) -->
+        <section class="performance-section">
+            <div class="container">
+                <h2 class="section-title light">📊 Rendiment (Escala DeepMind)</h2>
+                <p class="text-center performance-subtitle">Així és com ens aproximem i superem les capacitats humanes en dominis digitals.</p>
+                <div class="levels-container">
+                    <div class="level-bar-wrapper">
+                        <div class="level-info"><strong>L1: Emergent 🐣</strong> <span class="eq-tag">Menció Mitjana</span> <span class="eq-ex">(ChatGPT 2022)</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 20%;" data-target="20%"></div></div>
+                    </div>
+                    <div class="level-bar-wrapper">
+                        <div class="level-info"><strong>L2: Competent 📘</strong> <span class="eq-tag">Professional Júnior</span> <span class="eq-ex">(Claude 3.5 / Gemini 1.5)</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 40%;" data-target="40%"></div></div>
+                    </div>
+                    <div class="level-bar-wrapper">
+                        <div class="level-info"><strong>L3: Expert 🎯</strong> <span class="eq-tag">Especialista Sènior</span> <span class="eq-ex">(OpenAI o3)</span></div>
+                        <div class="progress-track"><div class="progress-fill accent-fill" style="width: 70%;" data-target="70%"></div></div>
+                    </div>
+                    <div class="level-bar-wrapper">
+                        <div class="level-info"><strong>L4: Virtuós 👑</strong> <span class="eq-tag">El millor del món</span> <span class="eq-ex">(AlphaGo en escacs/Go)</span></div>
+                        <div class="progress-track"><div class="progress-fill future-fill" style="width: 90%;" data-target="90%"></div></div>
+                    </div>
+                    <div class="level-bar-wrapper">
+                        <div class="level-info"><strong>L5: Sobrehumà 🌌</strong> <span class="eq-tag">Supera el 100% humans</span> <span class="eq-ex">(AlphaFold)</span></div>
+                        <div class="progress-track"><div class="progress-fill super-fill" style="width: 100%;" data-target="100%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA O REFLEXIÓ FINAL -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-box box-shadow">
+                    <h3>💡 Nota per a no experts</h3>
+                    <p class="cta-text">
+                        Estem vivint la transició de la IA que <span class="highlight-text">"ens ajuda a escriure"</span> a la IA que <span class="highlight-text">"treballa per nosaltres"</span>. La gran diferència avui (2026) és l'<strong>Agència</strong>: la capacitat de la màquina per prendre decisions i executar passos pràctics sense que l'estiguem supervisant constantment.
+                    </p>
+                    <a href="#" class="btn primary">Empodera't Tecnològicament</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER XAMMAR -->
+    <footer>
+        <div class="container">
+            <h4 class="footer-title">Xammar Digital</h4>
+            <p>El teu centre de capacitació tecnològica pràctica al Maresme.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts locals -->
+    <script src="script.js"></script>
+</body>
+</html>
